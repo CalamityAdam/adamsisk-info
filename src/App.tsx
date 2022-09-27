@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='flex flex-col h-screen px-6 sm:px-14 max-w-7xl mx-auto'>
       <nav className='h-14 sm:h-24 flex items-center'>
-        <img src={siteLogo} className='sm:h-14' alt='A S site logo' />
+        <img src={siteLogo} className='sm:h-14' height='56' alt='A S site logo' />
       </nav>
       <div className='flex-1 flex items-center justify-center'>
         <h1 className='text-center uppercase'>
