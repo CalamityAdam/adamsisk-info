@@ -8,18 +8,24 @@ function App() {
   const year = useMemo(() => new Date().getFullYear(), []);
 
   return (
-    <div className='flex flex-col h-screen px-6'>
-      <nav className='h-14 flex'>
-        <img src={siteLogo} className='logo react' alt='A S site logo' />
+    <div className='flex flex-col h-screen px-6 sm:px-14 max-w-7xl mx-auto'>
+      <nav className='h-14 sm:h-24 flex items-center'>
+        <img src={siteLogo} className='sm:h-14' alt='A S site logo' />
       </nav>
       <div className='flex-1 flex items-center justify-center'>
         <h1 className='text-center uppercase'>
-          <span className='block text-3xl'>hi my name is</span>
-          <span className='block text-6xl font-extrabold'>Adam Sisk</span>
-          <span className='block text-lg'>I make things on the internet</span>
+          <span className='block text-3xl sm:text-4xl lg:text-6xl'>
+            hi my name is
+          </span>
+          <span className='block text-6xl sm:text-8xl lg:text-9xl font-extrabold'>
+            Adam Sisk
+          </span>
+          <span className='block text-lg sm:text-2xl lg:text-3xl'>
+            I make things on the internet
+          </span>
         </h1>
       </div>
-      <footer className='h-24 flex justify-end'>
+      <footer className='h-24 sm:h-36 lg:h-52 flex justify-end'>
         <div className='flex flex-col justify-center items-end h-full'>
           <p className='block uppercase'>© Adam Sisk {year}</p>
           <div className='flex gap-4'>
