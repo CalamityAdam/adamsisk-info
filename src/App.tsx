@@ -26,7 +26,7 @@ function App() {
         </h1>
       </div>
       <footer className='h-24 sm:h-36 lg:h-52 flex justify-end'>
-        <div className='flex flex-col justify-center items-end h-full md:gap-2 lg:gap-4'>
+        <div className='flex flex-col justify-center items-end h-full sm:gap-2 lg:gap-4'>
           <p className='block uppercase'>© Adam Sisk {year}</p>
           <div className='flex gap-4'>
             <a
