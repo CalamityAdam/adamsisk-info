@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import siteLogo from './assets/site-logo.svg';
 import iconLinkedin from './assets/icon-linkedin.svg';
 import iconGithub from './assets/icon-github.svg';
@@ -6,19 +6,38 @@ import iconEmail from './assets/icon-email.svg';
 
 function App() {
   const year = useMemo(() => new Date().getFullYear(), []);
+  const [spin, setSpin] = useState(false);
 
   return (
     <div className='flex flex-col h-screen px-6 sm:px-14 max-w-7xl mx-auto'>
       <nav className='h-14 sm:h-24 flex items-center'>
-        <img src={siteLogo} className='sm:h-14' height='56' alt='A S site logo' />
+        <img
+          src={siteLogo}
+          className='sm:h-14'
+          height='56'
+          alt='A S site logo'
+        />
       </nav>
       <div className='flex-1 flex items-center justify-center'>
         <h1 className='text-center uppercase'>
           <span className='block text-3xl sm:text-4xl lg:text-6xl'>
             hi my name is
           </span>
-          <span className='block text-6xl sm:text-8xl lg:text-9xl font-extrabold'>
-            Adam Sisk
+          <span
+            className='flex text-6xl sm:text-8xl lg:text-9xl font-extrabold'
+            onMouseEnter={() => setSpin(true)}
+            onClick={() => setSpin(true)}
+          >
+            <span className='a-wrapper'>
+              <span
+                onAnimationEnd={() => {
+                  setSpin(false);
+                }}
+                className={`fancy-a ${spin ? 'spin' : ''}`}
+                aria-label='A'
+              ></span>
+            </span>
+            dam Sisk
           </span>
           <span className='block text-lg sm:text-2xl lg:text-3xl'>
             I make things on the internet
