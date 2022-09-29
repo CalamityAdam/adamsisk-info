@@ -16,6 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600;800&family=Red+Hat+Mono&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="/src/index.css" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZW2D8YMED"></script>
@@ -29,10 +30,45 @@
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <div id="root">
+    <div class='flex flex-col h-screen px-6 sm:px-14 max-w-7xl mx-auto'>
+      <nav class='h-14 sm:h-24 flex items-center'>
+        <img src='/src/assets/site-logo.svg' class='sm:h-14' height='56' alt='A S site logo' />
+      </nav>
+      <div class='flex-1 flex items-center justify-center'>
+        <h1 class='text-center uppercase'>
+          <span class='block text-3xl sm:text-4xl lg:text-6xl'>
+            hi my name is
+          </span>
+          <span class='block text-6xl sm:text-8xl lg:text-9xl font-extrabold'>
+            Adam Sisk
+          </span>
+          <span class='block text-lg sm:text-2xl lg:text-3xl'>
+            I make things on the internet
+          </span>
+        </h1>
+      </div>
+      <footer class='h-24 sm:h-36 lg:h-52 flex justify-end'>
+        <div class='flex flex-col justify-center items-end h-full sm:gap-2 lg:gap-4'>
+          <p class='block uppercase'>© Adam Sisk <span id="copyright-date"></span></p>
+          <div class='flex gap-4'>
+            <a href='https://www.linkedin.com/in/adamsisk/' aria-label='linkedin' title='visit me on linkedin'>
+              <img width='24' height='24' src='/src/assets/icon-linkedin.svg' class='icon linkedin' alt='linkedin' />
+            </a>
+            <a href='https://github.com/calamityadam' aria-label='github' title='visit me on github'>
+              <img width='24' height='24' src='/src/assets/icon-github.svg' class='icon github' alt='github' />
+            </a>
+            <a href='mailto:sisk@hey.com?subject=Hi%20Adam!' aria-label='email' title='send me an email'>
+              <img width='24' height='24' src='/src/assets/icon-email.svg' class='icon email' alt='email' />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
 
   <script>
+    document.querySelector('#copyright-date').innerText = new Date().getFullYear();
     console.log('%c Made with ♥️ by Adam Sisk ', 'color: darkslategray; background: palevioletred; font-size: 30px');
     console.log('%c https://github.com/calamityadam/ ', 'color: darkslategray; background: palevioletred; font-size: 20px');</script>
 </body>
