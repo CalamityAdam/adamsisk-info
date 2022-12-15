@@ -17,7 +17,6 @@ function App() {
             I make things on the internet
           </span>
         </h1>
-        <div><div className='op-interactive' id='6399fe5e00021864c0757f62' data-title='Open Field - What question do you want to ask your pros' data-url='https://ramseysolutions.outgrow.us/6399fe5e00021864c0757f62?vHeight=1' data-width='100%'></div><script src='//dyv6f9ner1ir9.cloudfront.net/assets/js/nloader.js'></script><script>initIframe('6399fe5e00021864c0757f62');</script></div>
       </Body>
 
       <Footer />
