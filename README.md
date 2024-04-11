@@ -9,3 +9,8 @@ Build with React (but it doesn't need to be) and Tailwind CSS.
 ```sh
 yarn && yarn dev
 ```
+
+# TODO
+
+- [ ] Add a blog
+- [ ] update npmrc to not use artifactory (oops!)
