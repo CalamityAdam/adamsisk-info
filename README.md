@@ -12,5 +12,5 @@ yarn && yarn dev
 
 # TODO
 
-- [ ] Add a blog
+- [x] Add a blog
 - [ ] update npmrc to not use artifactory (oops!)
