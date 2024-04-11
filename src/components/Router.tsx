@@ -1,16 +1,24 @@
+import { useEffect, useState } from 'react';
 import { Route, Switch } from 'wouter';
 import { Intro } from './Intro';
-import { Suspense, lazy } from 'react';
 import { Blogs } from './Blogs';
+import MarkdownWrapper from './MarkdownWrapper';
 
 function BlogPostLoader({ params }: { params: { slug: string } }) {
-  const BlogPost = lazy(() => import(`../blogs/${params.slug}.tsx`));
+  const [markdown, setMarkdown] = useState<string>('');
 
-  return (
-    <Suspense fallback='Loading blog post...'>
-      <BlogPost />
-    </Suspense>
-  );
+  useEffect(() => {
+    // dynamically import the markdown file based on the slug
+    const loadMarkdown = async () => {
+      const markdownModule = await import(`../blogs/${params.slug}.md?raw`);
+      console.log('markdownModule', markdownModule.default);
+      setMarkdown(markdownModule.default);
+    };
+
+    loadMarkdown().catch(console.error);
+  }, [params.slug]);
+
+  return <MarkdownWrapper>{markdown}</MarkdownWrapper>;
 }
 
 export const Router = () => (
