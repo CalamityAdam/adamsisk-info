@@ -3,12 +3,20 @@
 @tailwind utilities;
 
 :root {
+  --color: #333;
+  --background-color: #f1f1f1;
+  color: var(--color);
+  background-color: var(--background-color);
+
   font-family: 'Red Hat Display', sans-serif;
   /* font-family: 'Red Hat Mono', monospace; */
   font-size: 16px;
   line-height: 24px;
 
-  color-scheme: dark;
-  color: #f1f1f1;
-  background-color: #333;
+  /* color-scheme: dark; */
+}
+
+[data-theme='dark'] {
+  --color: #f1f1f1;
+  --background-color: #333;
 }

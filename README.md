@@ -14,3 +14,7 @@ yarn && yarn dev
 
 - [x] Add a blog
 - [x] update npmrc to not use artifactory (oops!)
+- [x] add syntax highlighting to code blocks
+- [x] figure out why i get a 404 on the first load of the blog page
+- [ ] figure out why backticks are rendering the ticks in addition to the styling
+- [ ] finish the theme toggle

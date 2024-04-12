@@ -7,7 +7,7 @@ function Footer() {
   const year = useMemo(() => new Date().getFullYear(), []);
 
   return (
-    <footer className='h-24 sm:h-36 lg:h-52 flex justify-end'>
+    <footer className='h-24 sm:h-36 lg:h-52 mt-6 flex justify-end shrink-0'>
       <div className='flex flex-col justify-center items-end h-full sm:gap-2 lg:gap-4'>
         <p className='block uppercase'>© Adam Sisk {year}</p>
         <div className='flex gap-4'>

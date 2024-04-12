@@ -3,7 +3,7 @@ import siteLogo from '../assets/site-logo.svg';
 
 function Nav() {
   return (
-    <nav className='h-14 sm:h-24 flex items-center'>
+    <nav className='h-14 shrink-0 mb-6 sm:h-24 flex items-center'>
       <div>
         <img
           src={siteLogo}
