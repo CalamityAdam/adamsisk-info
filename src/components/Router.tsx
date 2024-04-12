@@ -11,7 +11,7 @@ function BlogPostLoader({ params }: { params: { slug: string } }) {
     // dynamically import the markdown file based on the slug
     const loadMarkdown = async () => {
       const markdownModule = await import(`../blogs/${params.slug}.md?raw`);
-      console.log('markdownModule', markdownModule.default);
+
       setMarkdown(markdownModule.default);
     };
 

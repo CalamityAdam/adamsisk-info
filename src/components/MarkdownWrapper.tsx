@@ -1,10 +1,10 @@
 import { ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import remarkGfm from 'remark-gfm';
 import breaks from 'remark-breaks';
-import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import jsx from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
-import { githubGist as syntaxStyles } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import { dracula as syntaxStyles } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
@@ -36,7 +36,7 @@ function MarkdownWrapper({
   };
 
   return (
-    <div className='prose lg:prose-xl mx-auto'>
+    <div className='prose lg:prose-lg mx-auto leading-6'>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, breaks]}
         children={children}

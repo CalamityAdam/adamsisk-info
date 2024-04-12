@@ -15,7 +15,7 @@ function Nav() {
 
       <div className='flex-1'></div>
 
-      <div className='hidden sm:flex space-x-8'>
+      <div className='space-x-8'>
         <Link href='/' className='text-lg font-semibold'>
           Home
         </Link>
