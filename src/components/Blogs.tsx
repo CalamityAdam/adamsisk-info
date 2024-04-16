@@ -16,6 +16,12 @@ function Blogs() {
       >
         I want to make a blog.
       </Link>
+      <Link
+        className='font-medium text-xl text-blue-800 hover:underline'
+        href='src/blogs/2024-04-15-lightweight-client-side-routing-with-wouter.md'
+      >
+        Lightweight Client Side Routing with Wouter
+      </Link>
     </div>
   );
 }
