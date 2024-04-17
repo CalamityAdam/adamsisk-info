@@ -43,7 +43,7 @@ function MarkdownWrapper({
   };
 
   return (
-    <div className='prose lg:prose-lg mx-auto leading-6'>
+    <div className='overflow-auto prose lg:prose-lg mx-auto leading-6'>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, breaks]}
         children={children}
