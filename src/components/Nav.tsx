@@ -5,12 +5,14 @@ function Nav() {
   return (
     <nav className='h-14 shrink-0 mb-6 sm:h-24 flex items-center'>
       <div>
-        <img
-          src={siteLogo}
-          className='h-10 sm:h-14'
-          height='56'
-          alt='A S site logo'
-        />
+        <Link href='/'>
+          <img
+            src={siteLogo}
+            className='h-10 sm:h-14'
+            height='56'
+            alt='A S site logo'
+          />
+        </Link>
       </div>
 
       <div className='flex-1'></div>

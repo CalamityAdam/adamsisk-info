@@ -4,19 +4,28 @@ import { Intro } from './Intro';
 import { Blogs } from './Blogs';
 import MarkdownWrapper from './MarkdownWrapper';
 
-function BlogPostLoader({ params }: { params: { slug: string } }) {
-  const [markdown, setMarkdown] = useState<string>('');
+function useMarkdownLoader(slug: string): string {
+  const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
-    // dynamically import the markdown file based on the slug
-    const loadMarkdown = async () => {
-      const markdownModule = await import(`../blogs/${params.slug}.md?raw`);
+    async function loadMarkdown() {
+      try {
+        const markdownModule = await import(`../blogs/${slug}.md?raw`);
 
-      setMarkdown(markdownModule.default);
-    };
+        setMarkdown(markdownModule.default);
+      } catch (error) {
+        console.error(error);
+      }
+    }
 
-    loadMarkdown().catch(console.error);
-  }, [params.slug]);
+    loadMarkdown();
+  }, [slug]);
+
+  return markdown;
+}
+
+function BlogPostLoader({ params }: { params: { slug: string } }) {
+  const markdown = useMarkdownLoader(params.slug);
 
   return <MarkdownWrapper>{markdown}</MarkdownWrapper>;
 }

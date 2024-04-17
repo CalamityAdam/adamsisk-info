@@ -14,11 +14,11 @@ function Blogs() {
         className='font-medium text-xl text-blue-800 hover:underline'
         href='/blog/2024-04-11-i-want-to-make-a-blog'
       >
-        I want to make a blog.
+        I want to make a blog
       </Link>
       <Link
         className='font-medium text-xl text-blue-800 hover:underline'
-        href='src/blogs/2024-04-15-lightweight-client-side-routing-with-wouter.md'
+        href='blog/2024-04-16-lightweight-client-side-routing-with-wouter'
       >
         Lightweight Client Side Routing with Wouter
       </Link>

@@ -32,10 +32,9 @@ mkdir -p $directory
 filepath="${directory}/${filename}"
 
 # Create the new file with some default content
-echo "---" > $filepath
 echo "title: $1" >> $filepath
 echo "date: $date" >> $filepath
-echo "---" >> $filepath
+echo "author: Me" >> $filepath
 echo "" >> $filepath
 echo "# $1" >> $filepath
 echo "" >> $filepath
