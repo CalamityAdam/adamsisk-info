@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'wouter';
 import { Intro } from './Intro';
-import { Blogs } from './Blogs';
+import { Posts } from './Posts';
 import MarkdownWrapper from './MarkdownWrapper';
 
 function useMarkdownLoader(slug: string): string {
@@ -32,7 +32,7 @@ function BlogPostLoader({ params }: { params: { slug: string } }) {
 
 export const routes = [
   { path: '/', component: Intro },
-  { path: '/blog/', component: Blogs },
+  { path: '/blog/', component: Posts },
   { path: '/blog/:slug', component: BlogPostLoader },
 ];
 
