@@ -15,6 +15,7 @@ function useMarkdownLoader(slug: string): string {
         setMarkdown(markdownModule.default);
       } catch (error) {
         console.error(error);
+        setMarkdown('# 404 - oops 😬\nError loading the blog post.\n[Go home.](/)');
       }
     }
 
