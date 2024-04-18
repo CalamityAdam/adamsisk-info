@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch } from 'wouter';
 import { Intro } from './Intro';
-import { Blogs } from './Blogs';
+import { Posts } from './Posts';
 import MarkdownWrapper from './MarkdownWrapper';
 
 function useMarkdownLoader(slug: string): string {
@@ -15,6 +15,7 @@ function useMarkdownLoader(slug: string): string {
         setMarkdown(markdownModule.default);
       } catch (error) {
         console.error(error);
+        setMarkdown('# 404 - oops 😬\nError loading the blog post.\n[Go home.](/)');
       }
     }
 
@@ -30,10 +31,16 @@ function BlogPostLoader({ params }: { params: { slug: string } }) {
   return <MarkdownWrapper>{markdown}</MarkdownWrapper>;
 }
 
+export const routes = [
+  { path: '/', component: Intro },
+  { path: '/blog/', component: Posts },
+  { path: '/blog/:slug', component: BlogPostLoader },
+];
+
 export const Router = () => (
   <Switch>
-    <Route path='/' component={Intro} />
-    <Route path='/blog/' component={Blogs} />
-    <Route path='/blog/:slug' component={BlogPostLoader} />
+    {routes.map((route) => (
+      <Route key={route.path} path={route.path} component={route.component} />
+    ))}
   </Switch>
 );
