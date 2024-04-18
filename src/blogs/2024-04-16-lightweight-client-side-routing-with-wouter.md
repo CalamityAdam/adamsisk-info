@@ -105,7 +105,7 @@ Given that over the lifespan of a blog, it _could_ grow to dozens, hundreds, eve
 
 > If we structure our files in a way where the file name is the same as the slug we'll use in the URL path, then we can use the slug to find the blog post file in our `blogs/` directory.
 
-We can utilize lazy loading and code splitting via the `import()` function to delay fetching the blog post files until we actually need them. This is a very simple way to split code, so if the user only views one blog post we only send them one blog post. We can do something like this:
+We can utilize lazy loading and code splitting via the [`import()` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) to delay fetching the blog post files until we actually need them. This is a very simple way to split code, so if the user only views one blog post we only send them one blog post. We can do something like this:
 
 ```jsx
 import(`./blogs/${slug}.md?raw`).then((markdown) =>
