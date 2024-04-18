@@ -30,10 +30,16 @@ function BlogPostLoader({ params }: { params: { slug: string } }) {
   return <MarkdownWrapper>{markdown}</MarkdownWrapper>;
 }
 
+export const routes = [
+  { path: '/', component: Intro },
+  { path: '/blog/', component: Blogs },
+  { path: '/blog/:slug', component: BlogPostLoader },
+];
+
 export const Router = () => (
   <Switch>
-    <Route path='/' component={Intro} />
-    <Route path='/blog/' component={Blogs} />
-    <Route path='/blog/:slug' component={BlogPostLoader} />
+    {routes.map((route) => (
+      <Route key={route.path} path={route.path} component={route.component} />
+    ))}
   </Switch>
 );
