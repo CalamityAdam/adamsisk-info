@@ -27,6 +27,7 @@ yarn && yarn dev
 - [ ] look into why react-syntax-highlight has a huge waterfall
 - [ ] include raw source maps
 - [ ] add ADRs!
+- [ ] logging/analytics?
 
 # code ideas
 
