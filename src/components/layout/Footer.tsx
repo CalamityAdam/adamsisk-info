@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import iconLinkedin from '../assets/icon-linkedin.svg';
-import iconGithub from '../assets/icon-github.svg';
-import iconEmail from '../assets/icon-email.svg';
+import iconLinkedin from '../../assets/icon-linkedin.svg';
+import iconGithub from '../../assets/icon-github.svg';
+import iconEmail from '../../assets/icon-email.svg';
 
 function Footer() {
   const year = useMemo(() => new Date().getFullYear(), []);

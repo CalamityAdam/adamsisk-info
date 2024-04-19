@@ -1,5 +1,5 @@
 import { Link, useRoute } from 'wouter';
-import siteLogo from '../assets/site-logo.svg';
+import siteLogo from '../../assets/site-logo.svg';
 
 function Nav() {
   return (
