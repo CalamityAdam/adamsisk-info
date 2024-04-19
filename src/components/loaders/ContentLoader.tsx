@@ -1,3 +1,4 @@
+import { ContentPaths } from '../../constants';
 import { useContentLoader } from '../../hooks/useContentLoader';
 import MarkdownWrapper from '../layout/MarkdownWrapper';
 
@@ -6,9 +7,9 @@ function ContentLoader({
   path,
 }: {
   params: { slug: string };
-  path: string;
+  path: ContentPaths;
 }) {
-  const content = useContentLoader(`${path}/${params.slug}`);
+  const content = useContentLoader(path, params.slug);
 
   return <MarkdownWrapper>{content}</MarkdownWrapper>;
 }
