@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
+import { ContentPaths } from '../constants';
 
-function useContentLoader(path: string): string {
+function useContentLoader(path: ContentPaths, fileName: string): string {
   const [content, setContent] = useState('');
 
   useEffect(() => {
     async function loadContent() {
       try {
-        const contentModule = await import(`../${path}.md?raw`);
+        const contentModule = await import(
+          `../content/${path}/${fileName}.md?raw`
+        );
 
         setContent(contentModule.default);
       } catch (error) {
