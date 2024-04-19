@@ -17,6 +17,7 @@ yarn && yarn dev
 - [x] add syntax highlighting to code blocks
 - [x] figure out why i get a 404 on the first load of the blog page
 - [x] make current link active - https://blog.logrocket.com/an-introduction-to-wouter-a-react-router-alternative/
+- [x] add ADRs!
 - [ ] figure out why backticks are rendering the ticks in addition to the styling
 - [ ] finish the theme toggle
 - [ ] cache pages after first load?
@@ -26,7 +27,6 @@ yarn && yarn dev
 - [ ] react snap! https://chat.openai.com/c/2bc07438-d201-44e7-9b41-3d4de7e7ba61
 - [ ] look into why react-syntax-highlight has a huge waterfall
 - [ ] include raw source maps
-- [ ] add ADRs!
 - [ ] logging/analytics?
 - [ ] nav bar A11y
 
