@@ -5,10 +5,12 @@ import remarkGfm from 'remark-gfm';
 import breaks from 'remark-breaks';
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import sh from 'react-syntax-highlighter/dist/esm/languages/prism/bash';
+import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
 import { dracula as syntaxStyles } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 SyntaxHighlighter.registerLanguage('sh', sh);
+SyntaxHighlighter.registerLanguage('tsx', tsx);
 
 interface Props {
   children: string;
@@ -31,7 +33,9 @@ function MarkdownWrapper({
         </SyntaxHighlighter>
       ) : (
         <code
-          className={`text-blue px-0.5 bg-orange ${className ? className : ''}`}
+          className={`text-black px-0.5 bg-orange ${
+            className ? className : ''
+          }`}
           {...props}
         >
           {codeChildren}

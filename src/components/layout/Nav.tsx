@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useRoute } from 'wouter';
+import { Link, useLocation } from 'wouter';
 import siteLogo from '../../assets/site-logo.svg';
 
 interface CustomDocument extends Document {
@@ -7,6 +7,7 @@ interface CustomDocument extends Document {
 }
 
 function Nav() {
+  const [location] = useLocation();
   const [isVisible, setIsVisible] = useState(false);
   const [wasVisibleOnce, setWasVisibleOnce] = useState(false);
 
@@ -65,11 +66,15 @@ function Nav() {
       </div>
 
       <ul className='flex gap-8 text-lg font-semibold'>
+        {location !== '/' && (
+          <li>
+            <NavLink href='/'>Home</NavLink>
+          </li>
+        )}
         <li>
-          <ActiveAwareLink href='/'>Home</ActiveAwareLink>
-        </li>
-        <li>
-          <ActiveAwareLink href='/blog'>Blog</ActiveAwareLink>
+          <NavLink href='/blog' isActive={location.startsWith('/blog')}>
+            Blog
+          </NavLink>
         </li>
       </ul>
     </nav>
@@ -79,27 +84,17 @@ function Nav() {
 function buildNavLinkClassName(isActive: boolean): string {
   const baseClasses =
     'text-lg font-semibold hover:underline hover:underline-offset-2';
-  return isActive ? `${baseClasses} font-bold` : baseClasses;
+
+  return isActive ? `${baseClasses} underline underline-offset-2` : baseClasses;
 }
 
-function useIsActive(href: string): boolean {
-  const pattern = href === '/blog' ? '/blog/:slug?' : href;
-
-  const [isActive] = useRoute(pattern);
-
-  return isActive;
-}
-
-interface ActiveAwareLinkProps {
-  href: string;
+interface NavLink {
   children: React.ReactNode;
+  href: string;
+  isActive?: boolean;
 }
 
-function ActiveAwareLink({
-  href,
-  children,
-}: ActiveAwareLinkProps): JSX.Element {
-  const isActive = useIsActive(href);
+function NavLink({ children, href, isActive = false }: NavLink): JSX.Element {
   const className = buildNavLinkClassName(isActive);
 
   return (
