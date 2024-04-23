@@ -31,9 +31,7 @@ function MarkdownWrapper({
         </SyntaxHighlighter>
       ) : (
         <code
-          className={`text-slate-600 px-0.5 bg-cyan-50 ${
-            className ? className : ''
-          }`}
+          className={`text-blue px-0.5 bg-orange ${className ? className : ''}`}
           {...props}
         >
           {codeChildren}
@@ -43,11 +41,12 @@ function MarkdownWrapper({
   };
 
   return (
-    <div className='overflow-hidden prose lg:prose-lg mx-auto leading-6'>
+    <div className='overflow-hidden prose prose-pre:border-none dark:prose-invert lg:max-w-5xl mx-0 lg:prose-lg w-full leading-6'>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, breaks]}
         children={children}
         components={components}
+        className='w-full'
       />
     </div>
   );
