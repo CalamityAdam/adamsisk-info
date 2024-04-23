@@ -5,10 +5,14 @@ export default () => (
   <ErrorBoundary
     fallback={
       <div>
-        Something went wrong!{' '}
-        <a className='underline' href='/'>
-          take me home.
-        </a>
+        <p>
+          Something went wrong! 🤷‍♂️{' '}
+          <a className='underline' href='/'>
+            take me home.
+          </a>
+        </p>
+
+        <p className='italic'>(or check the console for more info 👀)</p>
       </div>
     }
   >

@@ -18,7 +18,8 @@ yarn && yarn dev
 - [x] figure out why i get a 404 on the first load of the blog page
 - [x] make current link active - https://blog.logrocket.com/an-introduction-to-wouter-a-react-router-alternative/
 - [x] add ADRs!
-- [ ] figure out why backticks are rendering the ticks in addition to the styling
+- [x] link to Heath's blog!! https://www.heathwhughes.com/post/coding-testing-and-becoming-world-class-part-2
+- [x] figure out why backticks are rendering the ticks in addition to the styling
 - [ ] finish the theme toggle
 - [ ] cache pages after first load?
 - [ ] turn links in markdown wrapper into wouter Link elements
@@ -29,13 +30,23 @@ yarn && yarn dev
 - [ ] include raw source maps
 - [ ] logging/analytics?
 - [ ] nav bar A11y
-- [ ] link to Heath's blog!! https://www.heathwhughes.com/post/coding-testing-and-becoming-world-class-part-2
 
 # code ideas
 
 - a mini code editor - using the same instance of react and deps that's installed on the blog, with a live update display next to it.
 - dynamic meta tags in the index.html based on the requested blog path?
+- automator quick action for "improve writing"? gpt4-api?
 
 # blog ideas
 
 - breaking down the App component to be templatized and minified
+- apply SRP to Posts.tsx (currently 2 reasons to change: UI, and blog posts)
+- ✨ make npm package for centering app with max width (insta cool SPA) use the max-width
+  ```css
+  .with-max-width {
+    max-width: calc(100vw-32px);
+    sm:max-width: calc(100vw-48px);
+    width: 100%;
+    margin: 0 auto;
+  }
+  ```

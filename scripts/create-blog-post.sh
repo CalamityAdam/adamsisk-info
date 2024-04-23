@@ -23,7 +23,7 @@ date=$(date +%Y-%m-%d)
 filename="${date}-${title}.md"
 
 # Directory where the blog posts are stored
-directory="./src/blogs"
+directory="./src/content/blogs"
 
 # Create the directory if it does not exist
 mkdir -p $directory
