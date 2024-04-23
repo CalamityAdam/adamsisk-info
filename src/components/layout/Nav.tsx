@@ -27,6 +27,9 @@ function Nav() {
   }
 
   function handleMouseUp() {
+    console.log(
+      `mouseUp with isVisible: ${isVisible} and wasVisibleOnce: ${wasVisibleOnce}`
+    );
     if (!isVisible) {
       return;
     }
@@ -65,7 +68,7 @@ function Nav() {
         )}
       </div>
 
-      <ul className='flex gap-8 text-lg font-semibold'>
+      <ul className='flex gap-8 text-lg font-semibold print:hidden'>
         {location !== '/' && (
           <li>
             <NavLink href='/'>Home</NavLink>

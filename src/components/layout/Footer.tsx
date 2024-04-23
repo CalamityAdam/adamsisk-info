@@ -13,7 +13,7 @@ function Footer() {
       </div>
       <div className='flex flex-col justify-center items-end h-full sm:gap-2 lg:gap-4'>
         <p className='block uppercase'>© Adam Sisk {year}</p>
-        <div className='flex gap-4'>
+        <div className='flex gap-4 print:hidden'>
           <a
             href='https://www.linkedin.com/in/adamsisk/'
             aria-label='linkedin'
@@ -64,7 +64,7 @@ const ThemeToggle: React.FC = () => {
   }
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex flex-col items-center print:hidden'>
       <label
         className='inline-flex items-center cursor-pointer'
         onKeyDown={handleKeyDown}
