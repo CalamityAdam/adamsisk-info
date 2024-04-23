@@ -27,9 +27,6 @@ function Nav() {
   }
 
   function handleMouseUp() {
-    console.log(
-      `mouseUp with isVisible: ${isVisible} and wasVisibleOnce: ${wasVisibleOnce}`
-    );
     if (!isVisible) {
       return;
     }
