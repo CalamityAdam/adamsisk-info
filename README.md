@@ -50,3 +50,5 @@ yarn && yarn dev
     margin: 0 auto;
   }
   ```
+- photo web-site as a service - sign in with google photos and select albums or people 
+  - auto sorting? auto filtering?
