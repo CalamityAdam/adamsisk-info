@@ -3,25 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --color: #333;
-  --background-color: #f1f1f1;
-  color: var(--color);
-  background-color: var(--background-color);
+  --black: #333;
+  --white: #f1f1f1;
+  --red: #e65053;
+  --red-dark: #e02327;
+  --yellow: #fabc3c;
+  --orange: #ffb238;
+  --green: #59cd90;
+  --blue: #176899;
+  --cyan: #50e6e3;
+
+  --primary: var(--black);
+  --secondary: var(--blue);
+  --background-primary: var(--white);
+
+  color: var(--primary);
+  background-color: var(--background-primary);
 
   font-family: 'Red Hat Display', sans-serif;
-  /* font-family: 'Red Hat Mono', monospace; */
   font-size: 16px;
   line-height: 24px;
-
-  /* color-scheme: dark; */
 }
 
 [data-theme='dark'] {
-  --color: #f1f1f1;
-  --background-color: #333;
+  --primary: var(--white);
+  --background-primary: var(--black);
+  --secondary: var(--cyan);
 }
 
 code,
 pre {
   font-family: 'Red Hat Mono', monospace;
+}
+
+.icon {
+  color: var(--color);
 }
