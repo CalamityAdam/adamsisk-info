@@ -29,6 +29,7 @@ yarn && yarn dev
 - [ ] include raw source maps
 - [ ] logging/analytics?
 - [ ] nav bar A11y
+- [ ] link to Heath's blog!! https://www.heathwhughes.com/post/coding-testing-and-becoming-world-class-part-2
 
 # code ideas
 
