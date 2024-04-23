@@ -6,6 +6,7 @@ author: Me
 
 Styling navigation links to indicate an "active" state based on the current page is a low hanging fruit when building out a web application. Lucky for us, [Wouter](https://github.com/molefrog/wouter?tab=readme-ov-file#how-do-i-make-a-link-active-for-the-current-route) makes this **incredibly** easy.
 
+## Here's some routes
 ```jsx
 // components/Nav.tsx
 import { Link } from 'wouter';
