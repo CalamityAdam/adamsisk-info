@@ -39,3 +39,13 @@ yarn && yarn dev
 # blog ideas
 
 - breaking down the App component to be templatized and minified
+- apply SRP to Posts.tsx (currently 2 reasons to change: UI, and blog posts)
+- ✨ make npm package for centering app with max width (insta cool SPA) use the max-width
+  ```css
+  .with-max-width {
+    max-width: calc(100vw-32px);
+    sm:max-width: calc(100vw-48px);
+    width: 100%;
+    margin: 0 auto;
+  }
+  ```
