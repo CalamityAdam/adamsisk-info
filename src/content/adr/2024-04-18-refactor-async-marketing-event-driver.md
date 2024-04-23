@@ -6,10 +6,41 @@ new builder: `/builder/PhoneNumberFormattingBuilder`
 
 ```kotlin
 @Component
-class PhoneNumberFormattingBuilder() {
-  fun withNumber() {}
-  fun withSanitization() {}
-  fun withCountryCode() {}
+class PhoneNumberFormattingBuilder {
+    private var phoneNumber: String? = null
+
+    fun withNumber(phoneNumber: String?): PhoneNumberFormattingBuilder {
+        this.phoneNumber = phoneNumber
+        return this
+    }
+
+    fun withSanitization(): PhoneNumberFormattingBuilder {
+        if (phoneNumber == null) return this
+
+        // Remove all non-numeric characters except the leading +
+        phoneNumber = phoneNumber?.replace("[^\\d+]".toRegex(), "")
+        return this
+    }
+
+    fun withCountryCode(): PhoneNumberFormattingBuilder {
+        if (phoneNumber == null) return this
+
+        // check if the number already has the +1 country code
+        phoneNumber = if (phoneNumber?.startsWith("+1") == true) {
+            phoneNumber
+        } else if (phoneNumber?.startsWith("1") == true) {
+            // If it starts with 1, just add the +
+            "+$phoneNumber"
+        } else {
+            // If it doesn't start with +1 or 1, add +1
+            "+1$phoneNumber"
+        }
+        return this
+    }
+
+    fun build(): String? {
+        return phoneNumber
+    }
 }
 ```
 
@@ -19,9 +50,24 @@ new builder: `PhotoUrlTransformationBuilder`
 
 ```kotlin
 @Component
-class PhotoUrlTransformationBuilder() {
-  fun withPhotoUrl() {}
-  fun withEmailTransformer() {}
+class PhotoUrlTransformationBuilder {
+    private var photoUrl: String? = null
+
+    fun withPhotoUrl(photoUrl: String?): PhotoUrlTransformationBuilder {
+        this.photoUrl = photoUrl
+        return this
+    }
+
+    fun withEmailTransformer(): PhotoUrlTransformationBuilder {
+        if (photoUrl?.contains("image/upload/") == true && !photoUrl.contains("t_elp_provider")) {
+            photoUrl = photoUrl?.replace("image/upload/", "image/upload/t_elp_provider/")
+        }
+        return this
+    }
+
+    fun build(): String? {
+        return photoUrl
+    }
 }
 ```
 
