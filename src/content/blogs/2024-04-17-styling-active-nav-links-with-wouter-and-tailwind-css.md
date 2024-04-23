@@ -6,7 +6,7 @@ author: Me
 
 Styling navigation links to indicate an "active" state based on the current page is a low hanging fruit when building out a web application. Lucky for us, [Wouter](https://github.com/molefrog/wouter?tab=readme-ov-file#how-do-i-make-a-link-active-for-the-current-route) makes this **incredibly** easy.
 
-## Here's some routes
+## Here's some nav links
 
 ```jsx
 // components/Nav.tsx
@@ -36,7 +36,7 @@ To achieve this, utilize Wouter's `<Link />` component by passing a function ins
 
 As expected, Wouter delivers stupid simplicity. It could not be any easier! However, there's one small shortcoming with this approach; `active` will only be true when the path exactly matches (i.e., `/blogs` will not be active for `/blogs/1`). Actually, this is a **giant** shortcoming, considering our site primarily consists of blog posts and dynamic paths. Every individual blog post includes a slug in the URL.
 
-## Hookify me Captain
+## Hookify me, Captain
 
 When accounting for more complex path structures, Wouter provides a way to manually check the path. We can use the `useLocation` hook, which, similarly to React's [`useState`](https://react.dev/reference/react/useState), returns a getter and a setter (or: a value and a function to update the value). We can check the value returned from `useLocation` against each `Link`'s `href` to determine an active state.
 
