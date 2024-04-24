@@ -1,4 +1,4 @@
-import { Body, Footer, Layout, Nav, Router } from './components';
+import { Body, Breadcrumbs, Footer, Layout, Nav, Router } from './components';
 import ErrorBoundary from './components/ErrorBoundary';
 
 export default () => (
@@ -18,6 +18,7 @@ export default () => (
   >
     <Layout>
       <Nav />
+      <Breadcrumbs />
 
       <Body>
         <Router />
