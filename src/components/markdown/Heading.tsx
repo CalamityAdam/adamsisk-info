@@ -24,7 +24,7 @@ export default ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <span>
+      <span className='inline-block'>
         {children}
         {isHovered && (
           <CopyToClipboard
@@ -32,7 +32,7 @@ export default ({
           >
             <span className='inline-block ml-2 cursor-pointer'>
               <svg
-                className='w-6 h-6 text-gray-800 dark:text-white'
+                className='w-5 h-5 hover:text-blue dark:text-white'
                 aria-hidden='true'
                 xmlns='http://www.w3.org/2000/svg'
                 width='24'
