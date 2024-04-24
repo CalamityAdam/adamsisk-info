@@ -1,6 +1,6 @@
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className='flex flex-col h-screen px-4 sm:px-6 max-w-7xl mx-auto'>
+    <div className='max-w-7xl w-[calc(100vw-32px)] sm:-[calc(100vw-48px)] mx-auto flex flex-col h-screen'>
       {children}
     </div>
   );
