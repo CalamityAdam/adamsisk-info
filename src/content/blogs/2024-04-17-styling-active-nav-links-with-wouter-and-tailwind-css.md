@@ -39,10 +39,19 @@ As expected, Wouter delivers stupid simplicity. It could not be any easier! Howe
 
 ## Hookify me, Captain
 
-When accounting for more complex path structures, Wouter provides a way to manually check the path. We can use the `useLocation` hook, which, similarly to React's [`useState`](https://react.dev/reference/react/useState), returns a getter and a setter (or: a value and a function to update the value). We can **check the value returned from `useLocation` against each `Link`'s `href` to determine an active state**.
+When accounting for more complex path structures, Wouter provides a way to manually check the path. Utilizing the `useLocation` hook, which, similarly to React's [`useState`](https://react.dev/reference/react/useState), returns a getter and a setter (or: a value and a function to update the value). We can **check the value returned from `useLocation` against each `Link`'s `href` to determine an active state**.
 
 ```tsx
 const [location, setLocation] = useLocation();
+
+// If URL == https://adamsisk.info/
+// location == "/"
+
+// if URL == https://adamsisk/info/blog
+// location == "/blog"
+
+// If URL == https://adamsisk.info/blog/2024-04-10-hello-world
+// location == "/blog/2024-04-10-hello-world"
 ```
 
 We can use the value to determine if the current page matches the link. Here, we've created a new component, NavLink, to handle this for us. We want a `NavLink` to, by default, apply a pretty underline when the user hovers over the link. If the user is already on that page, then the underline should already be present. We'll **add an `isActive` prop to conditionally render the active styles**.
@@ -76,10 +85,13 @@ function NavLink({ children, href, isActive = false }: NavLink): JSX.Element {
 export { NavLink };
 ```
 
+Then our top-level `Nav` component will tell `NavLink` whether or not it should be active. All we have to do is **pass the new `isActive` boolean prop to `NavLink`, with custom instructions based on each specific path**. Since every blog page follows the same `/blog/:slug` pattern, if the location _starts_ with `/blog`, then we know the user is either on the top-level `/blog` index page or on an individual blog.
+
 ```tsx
 // components/Nav.tsx
 
 import { Link, useLocation } from 'wouter';
+import { NavLink } from './NavLink';
 
 function Nav() {
   const [location] = useLocation();
