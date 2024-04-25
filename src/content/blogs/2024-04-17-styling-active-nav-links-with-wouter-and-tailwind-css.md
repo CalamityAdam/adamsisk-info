@@ -50,7 +50,7 @@ We can use the value to determine if the current page matches the link. Here, we
 ```tsx
 // components/NavLink.tsx
 
-import { Link, useLocation } from 'wouter';
+import { Link } from 'wouter';
 
 interface NavLink {
   children: React.ReactNode;
@@ -79,13 +79,19 @@ export { NavLink };
 ```tsx
 // components/Nav.tsx
 
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 
 function Nav() {
+  const [location] = useLocation();
+
   return (
     <nav>
-      <NavLink href='/'>Home</NavLink>
-      <NavLink href='/blog'>Blog</NavLink>
+      <NavLink href='/' isActive={location === '/'}>
+        Home
+      </NavLink>
+      <NavLink href='/blog' isActive={location.startsWith('/blog')}>
+        Blog
+      </NavLink>
     </nav>
   );
 }
