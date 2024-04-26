@@ -10,6 +10,23 @@ Build with React (but it doesn't need to be) and Tailwind CSS.
 yarn && yarn dev
 ```
 
+# things to know
+
+- when writing markdown you can use environment variables by wrapping them in double curly brackets
+  - example markdown:
+    ```md
+    This website is hosted at {{DOMAIN_URL}}!
+    ```
+  - .env:
+    ```
+    VITE_DOMAIN_URL=https://adamsisk.info
+    ```
+  - output:
+    ```
+    This website is hosted at https://adamsisk.info!
+    ```
+  - _note:_ if the value inside of the double curlies is not found in .env then the raw markdown will remain untouched.
+
 # TODO
 
 - [x] Add a blog
@@ -20,16 +37,17 @@ yarn && yarn dev
 - [x] add ADRs!
 - [x] link to Heath's blog!! https://www.heathwhughes.com/post/coding-testing-and-becoming-world-class-part-2
 - [x] figure out why backticks are rendering the ticks in addition to the styling
+- [x] make headings easily anchorable - copy link button
 - [ ] finish the theme toggle
 - [ ] cache pages after first load?
-- [ ] turn links in markdown wrapper into wouter Link elements
-- [ ] make headings easily anchorable - copy link button
+- [x] turn links in markdown wrapper into wouter Link elements
 - [ ] upvote buttons?
 - [ ] react snap! https://chat.openai.com/c/2bc07438-d201-44e7-9b41-3d4de7e7ba61
 - [ ] look into why react-syntax-highlight has a huge waterfall
 - [ ] include raw source maps
 - [ ] logging/analytics?
 - [ ] nav bar A11y
+- [ ] environmentalize domain (adamsisk.info) to support adumb.dev
 
 # code ideas
 
@@ -50,5 +68,5 @@ yarn && yarn dev
     margin: 0 auto;
   }
   ```
-- photo web-site as a service - sign in with google photos and select albums or people 
+- photo web-site as a service - sign in with google photos and select albums or people
   - auto sorting? auto filtering?

@@ -23,7 +23,6 @@ export default ({
     <SyntaxHighlighter
       style={syntaxStyles}
       language={match[1]}
-      PreTag='div'
       {...props}
     >
       {String(codeChildren).replace(/\n$/, '')}

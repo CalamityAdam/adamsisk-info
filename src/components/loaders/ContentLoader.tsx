@@ -10,8 +10,22 @@ function ContentLoader({
   path: ContentPaths;
 }) {
   const content = useContentLoader(path, params.slug);
+  const interpolatedContent = interpolateEnvVariables(content);
 
-  return <MarkdownWrapper>{content}</MarkdownWrapper>;
+  return <MarkdownWrapper>{interpolatedContent}</MarkdownWrapper>;
 }
 
 export { ContentLoader };
+
+const placeholderRegex = /\{\{(\w+)\}\}/g;
+
+function interpolateEnvVariables(markdown: string): string {
+  return markdown.replace(placeholderRegex, (match, variableName) => {
+    // Prefix the variable name with "VITE_" to match Vite's environment variable naming convention
+    const envVariableName = `VITE_${variableName}`;
+
+    // If the environment variable exists, replace the placeholder with its value
+    // If it doesn't exist, leave the placeholder as is
+    return import.meta.env[envVariableName] || match;
+  });
+}

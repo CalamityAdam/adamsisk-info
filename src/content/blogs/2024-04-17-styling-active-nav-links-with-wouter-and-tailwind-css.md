@@ -44,13 +44,13 @@ When accounting for more complex path structures, Wouter provides a way to manua
 ```tsx
 const [location, setLocation] = useLocation();
 
-// If URL == https://adamsisk.info/
+// If URL == {{DOMAIN_URL}}/
 // location == "/"
 
-// if URL == https://adamsisk/info/blog
+// if URL == {{DOMAIN_URL}}/blog
 // location == "/blog"
 
-// If URL == https://adamsisk.info/blog/2024-04-10-hello-world
+// If URL == {{DOMAIN_URL}}/blog/2024-04-10-hello-world
 // location == "/blog/2024-04-10-hello-world"
 ```
 
