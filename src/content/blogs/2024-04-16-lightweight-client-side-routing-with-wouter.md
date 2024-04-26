@@ -48,7 +48,7 @@ function App() {
 
 > If you're unfamiliar with the functionality of a router, it allows for dynamic rendering of components based on the current URL, while integrating with the browser's history API to enable navigation using the forward and backward buttons.
 
-In the code above, we see two links rendered on the page. Clicking on 'Home' sets the URL path to `/` (e.g., `https://adamsisk.info/`—the path is just the bit after the website name). The `<Switch>` component then renders only the `Home` component, as that is the `Route` with a `path` prop set to `"/"`, matching the current URL path. Clicking on 'Blog' changes the URL path to `/blog` (or `https://adamsisk.info/blog`), which causes the `Switch` to reactively render only the `Blog` component, no longer displaying the `Home` component.
+In the code above, we see two links rendered on the page. Clicking on 'Home' sets the URL path to `/` (e.g., `{{DOMAIN_URL}}/`—the path is just the bit after the website name). The `<Switch>` component then renders only the `Home` component, as that is the `Route` with a `path` prop set to `"/"`, matching the current URL path. Clicking on 'Blog' changes the URL path to `/blog` (or `{{DOMAIN_URL}}/blog`), which causes the `Switch` to reactively render only the `Blog` component, no longer displaying the `Home` component.
 
 ...**neat**, so it works! If you're just looking to get the most basic navigation/routing then you can stop reading here, mission accomplished ✅ But remember, we like to over-engineer **everything**. 😏
 
@@ -67,7 +67,7 @@ The last step in dynamic routing involves surfacing values (params) from the URL
 This setup would pass a prop called `slug` to the component specified in the `component` prop. In this case, our `BlogPost` component could utilize that parameter to fetch and render the corresponding blog post, as shown below:
 
 ```jsx
-// If URL = https://adamsisk.info/blog/2024-04-10-hello-world
+// If URL = {{DOMAIN_URL}}/blog/2024-04-10-hello-world
 
 function BlogPost({ match }) {
   const { slug } = match.params;
@@ -151,7 +151,7 @@ Now we'll update our Router component to use our new `BlogPostLoader` as the com
 </Switch>
 ```
 
-Navigating to `https://adamsisk.info/blog/2024-04-10-hello-world` will now make an additional fetch to pull the raw markdown stored in the file at the path `src/blogs/2024-04-10-hello-world.md` and then render it as a child of `MarkdownWrapper`.
+Navigating to `{{DOMAIN_URL}}/blog/2024-04-10-hello-world` will now make an additional fetch to pull the raw markdown stored in the file at the path `src/blogs/2024-04-10-hello-world.md` and then render it as a child of `MarkdownWrapper`.
 
 ## SOLIDification
 

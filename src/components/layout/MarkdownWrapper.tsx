@@ -32,7 +32,6 @@ function MarkdownWrapper({
         remarkPlugins={[remarkGfm, breaks]}
         children={children}
         components={components}
-        // className='w-full'
       />
     </div>
   );
