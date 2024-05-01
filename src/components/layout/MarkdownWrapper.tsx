@@ -27,7 +27,7 @@ function MarkdownWrapper({
     ),
   };
   return (
-    <div className='overflow-hidden prose prose-pre:border-none dark:prose-invert lg:max-w-5xl mx-0 lg:prose-lg w-full leading-6'>
+    <div className='overflow-hidden prose prose-table:w-auto prose-pre:border-none dark:prose-invert lg:max-w-5xl mx-0 lg:prose-lg w-full leading-6'>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, breaks]}
         children={children}

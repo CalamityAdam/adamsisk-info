@@ -10,6 +10,31 @@ Build with React (but it doesn't need to be) and Tailwind CSS.
 yarn && yarn dev
 ```
 
+# TODO
+
+- [ ] upvote buttons?
+- [ ] move to adumb.dev
+- [ ] figure out why code blocks have a thicc border
+- [ ] finish the theme toggle
+- [ ] cache pages after first load?
+- [ ] react snap! https://chat.openai.com/c/2bc07438-d201-44e7-9b41-3d4de7e7ba61
+- [ ] look into why react-syntax-highlight has a huge waterfall
+- [ ] include raw source maps
+- [ ] logging/analytics?
+- [ ] nav bar A11y
+- [ ] ssr? https://chat.openai.com/c/8f43ac87-93b0-4683-8c9e-2fb836ab7d93
+- [x] environmentalize domain (adamsisk.info) to support adumb.dev
+- [x] turn links in markdown wrapper into wouter Link elements
+- [x] link to Heath's blog!! https://www.heathwhughes.com/
+- [x] add syntax highlighting to code blocks
+- [x] make headings easily anchorable - copy link button
+- [x] make current link active
+- [x] add ADRs!
+- [x] update npmrc to not use artifactory (oops!)
+- [x] figure out why backticks are rendering the ticks in addition to the styling
+- [x] figure out why i get a 404 on the first load of the blog page
+- [x] Add a blog
+
 # things to know
 
 - when writing markdown you can use environment variables by wrapping them in double curly brackets
@@ -26,28 +51,13 @@ yarn && yarn dev
     This website is hosted at https://adamsisk.info!
     ```
   - _note:_ if the value inside of the double curlies is not found in .env then the raw markdown will remain untouched.
+- max app width: 1280px
+- max blog width: 1024px
+- En-Dash         &ndash;    &#150;
+- Em-Dash         &mdash;    &#151;
+- Minus Symbol    &minus;    &#8722;
 
-# TODO
 
-- [x] Add a blog
-- [x] update npmrc to not use artifactory (oops!)
-- [x] add syntax highlighting to code blocks
-- [x] figure out why i get a 404 on the first load of the blog page
-- [x] make current link active - https://blog.logrocket.com/an-introduction-to-wouter-a-react-router-alternative/
-- [x] add ADRs!
-- [x] link to Heath's blog!! https://www.heathwhughes.com/post/coding-testing-and-becoming-world-class-part-2
-- [x] figure out why backticks are rendering the ticks in addition to the styling
-- [x] make headings easily anchorable - copy link button
-- [ ] finish the theme toggle
-- [ ] cache pages after first load?
-- [x] turn links in markdown wrapper into wouter Link elements
-- [ ] upvote buttons?
-- [ ] react snap! https://chat.openai.com/c/2bc07438-d201-44e7-9b41-3d4de7e7ba61
-- [ ] look into why react-syntax-highlight has a huge waterfall
-- [ ] include raw source maps
-- [ ] logging/analytics?
-- [ ] nav bar A11y
-- [ ] environmentalize domain (adamsisk.info) to support adumb.dev
 
 # code ideas
 
