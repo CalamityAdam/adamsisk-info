@@ -27,7 +27,7 @@ export default ({
     </SyntaxHighlighter>
   ) : (
     <code
-      className={`text-black px-0.5 bg-orange ${className ? className : ''}`}
+      className={`text-black px-0.5 bg-orange break-words ${className ? className : ''}`}
       {...props}
     >
       {codeChildren}
