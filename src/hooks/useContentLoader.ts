@@ -21,7 +21,7 @@ function useContentLoader(path: ContentPaths, fileName: string): string {
     }
 
     loadContent();
-  }, [path]);
+  }, [path, fileName]);
 
   return content;
 }
