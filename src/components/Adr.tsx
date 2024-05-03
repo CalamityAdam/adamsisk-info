@@ -1,10 +1,10 @@
 import { useLocation } from 'wouter';
 
-function Daily(): null {
+function Adr(): null {
   const [, navigate] = useLocation();
-  navigate('/daily/index', { replace: true });
+  navigate('/adr/index', { replace: true });
 
   return null;
 }
 
-export { Daily };
+export { Adr };

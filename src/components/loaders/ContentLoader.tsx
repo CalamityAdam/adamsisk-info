@@ -17,8 +17,10 @@ function ContentLoader({
 
 export { ContentLoader };
 
+// pattern matches {{variableName}}
 const placeholderRegex = /\{\{(\w+)\}\}/g;
 
+// TODO: move this to a utility function
 function interpolateEnvVariables(markdown: string): string {
   return markdown.replace(placeholderRegex, (match, variableName) => {
     // Prefix the variable name with "VITE_" to match Vite's environment variable naming convention
