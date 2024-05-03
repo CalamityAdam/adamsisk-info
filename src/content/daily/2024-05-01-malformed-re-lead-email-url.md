@@ -90,11 +90,13 @@ pros = {
 
 Because the utm parameters would begin with a `?`, `utm_medium=email` would not be picked up as a valid parameter and instead would be included in one of the `partner_urn`s.
 
+**THIS IS IMPORTANT - this means if a user clicks one of these broken URLs and lands on the results page, they WILL NOT SEE ANY PROS.**
+
 This isn't a problem though. Around April 8th/9th, Space Cowboys + Fight Club worked together to get all of the URLs in the emails updated to use a `&`. There were 20+ locations to make this change, in a very painfully manual and slow tedious manner. We tested this well, were confident with the change, and all was well in the world
 
 ### We Missed One 🙈
 
-In one or two instances, there are **other** places in the email where we link to the results page. Specifically, on the `View Full Profile` link displayed next to the pros' pictures. We didn't consider that this URL is actually just the exact same URL as in the CTA.
+In a few instances, there are **other** places in the email where we link to the results page. Specifically, on the `View Full Profile` link displayed next to the pros' pictures. We didn't consider that this URL is actually just the exact same URL as in the CTA.
 
 On May 1st, we observed a Clarity session recording of a case where a user landed on the results page (directly, not redirected) and no pros were displayed. The URL included partner URNs, so this was a big red flag. We realized our previous fear had come true 😭 the page was breaking because it was trying to fetch a pro with the partner URN of `urn:lampo:sa_partner_id:59742?utm_medium=email`.
 
@@ -102,6 +104,15 @@ We checked Dynatrace/Loggly and found a small error that corresponds to this iss
 
 ## We're Much More Confident Now
 
-**Fight Club via Zena fixed the offending links in the emails; Space Cowboys are adding additional alerting and improving the related logging to monitor if this issue will happen again; and all is well in the world**
+**Fight Club via Zena and Lilly fixed the offending links in the emails; Space Cowboys are adding additional alerting and improving the related logging to monitor if this issue will happen again; and all is well in the world**
+
+## The Impact
+
+_*updated as of May 3, 2024 11:10am_
+We have seen 1500+ instances of the results page loading with no pros.
+
+![1500 instances of these links being clicked](../../src/assets/malformed-url-impact.png)
+
 
 _Side note: Just an observation of Klaviyo from me as an engineer: I'm surprised issues like this don't come up more often; it's incredibly clunky and slow to make any changes to an email template. Email marketers are brilliant for being able to pump out such excellence at such a high frequency using such primitive text editors_ 👏 _I wonder what we can do to help improve their developer experience when creating email templates._
+
