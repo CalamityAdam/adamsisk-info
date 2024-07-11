@@ -2,7 +2,7 @@
 
 This is the source code for my personal website, [adamsisk.info](https://adamsisk.info).
 
-Build with React (but it doesn't need to be) and Tailwind CSS.
+Build with React (but it doesn't need to be) and Tailwind CSS. 💃
 
 ## Development
 
